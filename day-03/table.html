@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table</title>
+  </head>
+  <body>
+    <!-- 표 만드는 태그 -->
+    <table border="1">
+      <caption>
+        일본 취업을 위한 어학성적
+      </caption>
+      <thead>
+        <tr>
+          <!-- 접근성을 위해서 scope를 쓴다. -->
+          <th scope="col">First Ofiicial Language</th>
+          <th scope="col">Speaking</th>
+          <th scope="col">Listening</th>
+          <th scope="col">Reading</th>
+          <th scope="col">Writing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CLB 9이상</td>
+          <td>6</td>
+          <td>6</td>
+          <td>6</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>CLB 8이상</td>
+          <td>5</td>
+          <td>5</td>
+          <td>5</td>
+          <td>5</td>
+        </tr>
+      </tbody>
+      <!-- <tfoot></tfoot> -->
+    </table>
+    <hr />
+    <table border="1">
+      <caption>
+        회사정보
+      </caption>
+      <tbody>
+        <tr>
+          <th scope="row">기업명</th>
+          <td>(주)유한양행</td>
+          <th scope="row">설립</th>
+          <td>1926.06.20</td>
+        </tr>
+        <tr>
+          <th scope="row">대표이사</th>
+          <td>사장 조욱제</td>
+          <th scope="row">상장일</th>
+          <td>1962.11.01</td>
+        </tr>
+        <tr>
+          <th scope="row">주소</th>
+          <td colspan="3">서울특별시 동작구 노량진로 74</td>
+        </tr>
+        <tr>
+          <th scope="row">전화번호</th>
+          <td colspan="3">02-828-0181</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <table border="1" width="800px">
+      <colgroup>
+        <col style="width: 10%" />
+        <col style="width: 18%" />
+        <col />
+        <col style="width: 52.5%" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <th rowspan="5">인적사항</th>
+          <th rowspan="2">성 명</th>
+          <td colspan="2">(한글)</td>
+          <td rowspan="5">(사진) <br />(3cm x 4cm)</td>
+        </tr>
+        <tr>
+          <td colspan="2">(영문)</td>
+        </tr>
+        <tr>
+          <th>연락처</th>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <th>이메일</th>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <th>주소</th>
+          <td colspan="2"></td>
+        </tr>
+      </tbody>
+    </table>
+    <table border="1" width="800px">
+      <colgroup>
+        <col style="width: 10%" />
+        <col style="width: 23.5%" />
+        <col style="width: 23.5%" />
+        <col style="width: 23.5%" />
+        <col style="width: 19.5%" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <th rowspan="3">학력사항</th>
+          <th>재학기간</th>
+          <th>학 교 명</th>
+          <th>전공 및 성적</th>
+          <th>소 재 지</th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <table border="1" width="800px">
+      <colgroup>
+        <col style="width: 10%" />
+        <col style="width: 23.5%" />
+        <col style="width: 23.5%" />
+        <col style="width: 23.5%" />
+        <col style="width: 19.5%" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <th rowspan="6">경력사항</th>
+          <th>근무기간</th>
+          <th>직 장 명</th>
+          <th>담당업무</th>
+          <th>부서 및 직위</th>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+    <table border="1" width="800px">
+      <caption>
+        방한 횟수와 한국 여행 시 좋았던 점(단위: 명)
+      </caption>
+      <thead>
+        <tr>
+          <th>방한횟수</th>
+          <th>편리한 교통</th>
+          <th>친절한 사람들</th>
+          <th>독특한 문화유산</th>
+          <th>맛있는 음식</th>
+          <th>다양한 쇼핑</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1회</td>
+          <td>3,700</td>
+          <td>4,200</td>
+          <td>3,700</td>
+          <td>4,100</td>
+          <td>4,900</td>
+        </tr>
+        <tr>
+          <td>2회</td>
+          <td>3,100</td>
+          <td>4,000</td>
+          <td>3,500</td>
+          <td>4,700</td>
+          <td>4,200</td>
+        </tr>
+        <tr>
+          <td>3회 이상</td>
+          <td>3,500</td>
+          <td>4,500</td>
+          <td>3,700</td>
+          <td>5,000</td>
+          <td>3,900</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>합계</td>
+          <td>10,300</td>
+          <td>12,700</td>
+          <td>10,400</td>
+          <td>11,800</td>
+          <td>13,000</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
