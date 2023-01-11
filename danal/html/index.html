@@ -362,7 +362,7 @@
         </div>
       </section>
 
-      <section class="people section">
+      <section class="recruit section">
         <div class="container">
           <div class="title-box">
             <h2>사람중심, 창의중심</h2>
@@ -379,32 +379,28 @@
             <p>업계 1위 다날과 함께 성공 비즈니스를 만들어 가세요.</p>
             <a href="">Partner Application</a>
           </div>
-          <img src="../images/main/img_partner.png" alt="" />
+          <div class="img"></div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <div class="container">
-        <div class="info">
-          <h2>
-            <img
-              src="https://www.danal.co.kr/img/ci_danal01.png"
-              alt=""
-              class="danal-logo"
-            />
-          </h2>
-          <ul>
+        <div class="upper">
+          <span class="logo"
+            ><img src="../images/layout/ci_danal01.png" alt=""
+          /></span>
+          <ul class="list">
             <li>
-              <a href=""><strong>개인정보처리방침</strong></a>
+              <a href="">개인정보처리방침</a>
             </li>
             <li><a href="">이메일무단수집거부</a></li>
             <li><a href="">내부정보관리규정</a></li>
             <li><a href="">사이트맵</a></li>
           </ul>
-          <select class="family-site">
+          <select class="select">
             <option value="">다날페이</option>
-            <option value="">다날엔터테이먼트</option>
+            <option value="">다날엔터테인먼트</option>
             <option value="">다날에프엔비</option>
             <option value="">다날핀테크</option>
             <option value="">페이프로토콜AG</option>
@@ -413,27 +409,17 @@
             <option value="">플렉스페이</option>
           </select>
         </div>
-        <div class="location">
-          <p>
-            경기도 성남시 분당구 분당로 55 서현동 퍼스트타워 9층
-            (주)다날(13591)<br />
-            Copyright 2013 by Danal Co., Ltd. All Rights Reserved.
-          </p>
-          <div class="isms">
-            <img
-              src="https://www.danal.co.kr/img/icon_isms.png"
-              alt=""
-              class="isms-logo"
-            />
-            <span
-              >[인증범위] 통합 결제 플랫폼 및 본인확인 서비스<br />[유효기간]
-              2021.04.21 ~ 2024.04.20</span
-            >
-          </div>
+        <div class="lower">
+          <address>
+            <p>
+              경기도 성남시 분당구 분당로 55 서현동 퍼스트타워 9층
+              (주)다날(13591)
+            </p>
+            <p>Copyright 2013 by Danal Co., Ltd. All Rights Reserved.</p>
+          </address>
         </div>
       </div>
     </footer>
-
     <script>
       // dom(document object model)
       const header = document.querySelector(".header");
@@ -460,6 +446,16 @@
         autoplay: {
           delay: 2500,
         },
+      });
+
+      window.addEventListener("scroll", function (e) {
+        // throttle, debounce
+
+        if (window.scrollY > 0) {
+          header.classList.add("scroll");
+        } else {
+          header.classList.remove("scroll");
+        }
       });
     </script>
   </body>
