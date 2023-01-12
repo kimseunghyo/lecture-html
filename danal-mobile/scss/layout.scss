@@ -1,0 +1,237 @@
+@import "vars";
+@import "mixins";
+
+body {
+  font-family: "Lato", "Pretendard", "Dotum", sans-serif;
+  font-size: 16px;
+  color: #111;
+
+  // webkit에서만 적용가능
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(165, 163, 163);
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: none;
+  padding: 0;
+}
+
+.header {
+  $h: 60px;
+  height: $h;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  top: 0;
+
+  .logo {
+    &__link {
+      display: flex;
+      height: $h;
+      align-items: center;
+      padding-left: 20px;
+
+      &__img {
+        height: $h - 20px;
+      }
+    }
+  }
+
+  .btn--all {
+    height: $h;
+    width: $h;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+
+    span {
+      display: block;
+      width: 30px;
+      height: 2px;
+      background-color: #111;
+      position: absolute;
+      left: 15px;
+
+      &:nth-child(1) {
+        top: 19px;
+      }
+      &:nth-child(2) {
+        top: 29px;
+      }
+      &:nth-child(3) {
+        top: 39px;
+      }
+    }
+  }
+
+  &.on {
+    .btn--all {
+      span {
+        &:nth-child(1) {
+          top: 29px;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        &:nth-child(3) {
+          top: 29px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    .gnb {
+      left: 0;
+    }
+  }
+
+  .gnb {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    left: 100%;
+    transition: all 0.6s ease;
+
+    &__list {
+      > li {
+        > a {
+          height: 50px;
+          display: flex;
+          align-items: center;
+          border-top: 1px solid #ccc;
+          font-weight: 500;
+
+          &:before {
+            content: "";
+            display: block;
+            width: 3px;
+            height: 3px;
+            background-color: $blue;
+            border-radius: 10px;
+            margin: 0 10px 0 20px;
+          }
+        }
+      }
+
+      &--sub {
+        background-color: $blue;
+        color: #fff;
+        display: none;
+
+        &.on {
+          display: block;
+        }
+
+        li {
+          a {
+            display: flex;
+            padding: 15px 0 15px 10px;
+            font-size: 14px;
+            border-top: 1px solid darken($blue, 10);
+            align-items: center;
+
+            &:before {
+              content: "";
+              display: block;
+              width: 3px;
+              height: 3px;
+              background-color: #fff;
+              border-radius: 10px;
+              margin: 0 10px 0 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .link {
+    position: absolute;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 100px;
+    top: 15px;
+    background-color: $blue;
+    color: #fff;
+    right: 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    @include longShadow(20, darken($blue, 10));
+  }
+}
+
+.footer {
+  padding: 10px 10px;
+  background-color: rgb(252, 252, 252);
+  border-top: 1px solid #ccc;
+
+  .upper {
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      img {
+        width: 120px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .list {
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-between;
+
+      li {
+        font-weight: 500;
+        color: rgb(58, 58, 58);
+        font-size: clamp(12px, 5vw, 14px);
+
+        &:nth-child(1) {
+          color: #111;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .select {
+      margin-left: auto;
+      margin-top: 20px;
+      width: 150px;
+      height: 30px;
+      border: 1px solid #ccc;
+    }
+  }
+
+  .lower {
+    margin-top: 30px;
+    font-size: clamp(11px, 4.5vw, 13px);
+  }
+}
