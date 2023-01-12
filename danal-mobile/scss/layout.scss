@@ -189,7 +189,6 @@ button {
 }
 
 .footer {
-  padding: 10px 10px;
   background-color: rgb(252, 252, 252);
   border-top: 1px solid #ccc;
 
@@ -200,19 +199,20 @@ button {
     .logo {
       img {
         width: 120px;
-        margin-bottom: 10px;
+        padding: 10px 10px;
       }
     }
 
     .list {
-      display: flex;
       margin-top: 10px;
-      justify-content: space-between;
+      display: flex;
+      justify-content: start;
 
       li {
         font-weight: 500;
         color: rgb(58, 58, 58);
         font-size: clamp(12px, 5vw, 14px);
+        margin-left: 10px;
 
         &:nth-child(1) {
           color: #111;
@@ -223,7 +223,8 @@ button {
 
     .select {
       margin-left: auto;
-      margin-top: 20px;
+      margin-top: 10px;
+      margin-right: 10px;
       width: 150px;
       height: 30px;
       border: 1px solid #ccc;
