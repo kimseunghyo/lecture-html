@@ -187,6 +187,6 @@ button {
   border: 1px solid #ccc;
 }
 .footer .lower {
-  margin-top: 30px;
+  padding: 10px 10px;
   font-size: clamp(11px, 4.5vw, 13px);
 }
