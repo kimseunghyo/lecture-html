@@ -21,18 +21,6 @@ img {
   vertical-align: top;
 }
 
-.hidden {
-  display: none;
-}
-
-:root {
-  --red: rgb(221, 69, 49);
-  --blue: rgb(61, 111, 248);
-  --gray: rgb(214, 212, 212);
-  --h2: 44px;
-  --h3: 32px;
-}
-
 .header {
   display: flex;
   flex-direction: row;
@@ -47,34 +35,29 @@ img {
   height: 100px;
   transition: all 0.25s ease;
 }
-
 .header .logo a {
   display: flex;
   height: 50px;
   align-items: center;
 }
-
 .header .logo a img {
   height: 50px;
   position: absolute;
   transition: all 0.25s ease;
 }
-
-.header .logo a .logo__img--dark {
+.header .logo__img--dark {
   opacity: 0;
 }
-
 .header.on {
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   color: #111;
 }
-
 .header.on a .logo__img--dark {
   opacity: 1;
 }
-
 .header.on a .logo__img--light {
   opacity: 0;
 }
@@ -82,11 +65,16 @@ img {
 .gnb .list {
   display: flex;
 }
-
 .gnb .list > li {
   position: relative;
 }
-
+.gnb .list > li:hover {
+  color: rgb(61, 111, 248);
+}
+.gnb .list > li:hover .depth02 {
+  opacity: 1;
+  pointer-events: auto;
+}
 .gnb .list > li > a {
   display: flex;
   justify-content: center;
@@ -98,41 +86,28 @@ img {
   padding: 0 30px;
   transition: color 0.25s ease-out;
 }
-
-/* 마우스 올라갔을 때 */
-.gnb .list > li:hover {
-  color: var(--blue);
-}
-
-.gnb .list > li:hover .depth02 {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 .gnb .list > li .depth02 {
   background-color: #fff;
   color: #666;
   text-align: center;
   text-transform: uppercase;
   padding: 15px;
-  font-weight: 700;
+  font-weight: 500;
   position: absolute;
   box-sizing: border-box;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.5s ease;
-  border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
   min-width: 182px;
 }
-
 .gnb .list > li .depth02 li a {
   display: block;
   padding: 10px 0;
 }
-
 .gnb .list > li .depth02 li a:hover {
   color: #111;
+  font-weight: 700;
 }
 
 .language {
@@ -140,13 +115,11 @@ img {
   text-transform: uppercase;
   font-size: 18px;
 }
-
 .language a {
   margin-left: 15px;
 }
-
 .language .active {
-  color: var(--blue);
+  color: rgb(61, 111, 248);
 }
 
 .btn-top {
@@ -155,7 +128,7 @@ img {
   height: 80px;
   right: 50px;
   bottom: 50px;
-  background-color: var(--blue);
+  background-color: rgb(61, 111, 248);
   color: #fff;
   border-radius: 10px;
   border: none;
@@ -164,16 +137,37 @@ img {
   transform: translateY(500px);
   transition: all 0.25s ease 0.25s;
 }
-
 .btn-top.on {
   transform: translateY(0);
 }
 
-/* 크기에 따른 css 한번 더 쓰기 */
-/*
-@media all and (max-width: 1300px) {
-  .header {
-    flex-direction: column;
-  }
+.footer {
+  background-color: rgb(27, 36, 75);
+  padding: 80px 0;
+  color: #fff;
 }
-*/
+.footer-logo {
+  width: 200px;
+}
+.footer-items {
+  display: flex;
+}
+.footer__item {
+  flex-grow: 1;
+}
+.footer__item:nth-child(2) {
+  flex-grow: 2;
+}
+.footer__item h2 {
+  font-size: 20px;
+}
+.footer__item dl {
+  display: flex;
+  margin-bottom: 20px;
+}
+.footer__item dt {
+  width: 70px;
+}
+.footer-copyright {
+  margin-top: 30px;
+}
