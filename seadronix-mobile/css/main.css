@@ -110,11 +110,7 @@ h2 {
   transition: transform 0.25s ease;
 }
 .btn-icon:not(.btn--white) {
-  display: flex;
-  justify-content: flex-end;
-  position: absolute;
-  top: 90%;
-  right: 0;
+  margin-left: auto;
 }
 
 .about__img {
@@ -221,7 +217,6 @@ h2 {
 .tech-row {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 .tech-row .tech-item {
   width: 100%;
@@ -231,7 +226,7 @@ h2 {
   margin-bottom: 40px;
 }
 .tech-banner {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 .tech-banner a {
   position: relative;
@@ -328,7 +323,7 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 .news-banner {
   position: relative;
