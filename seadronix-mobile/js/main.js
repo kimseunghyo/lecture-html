@@ -1,3 +1,5 @@
+Splitting();
+
 const header = document.querySelector(".header");
 const btnAll = document.querySelector(".btn--all");
 const depth01 = document.querySelectorAll(".gnb > .list > li > a");
@@ -34,7 +36,7 @@ AOS.init({
   delay: 500,
 });
 
-const swiper = new Swiper(".visual__list", {
+const swiper1 = new Swiper(".visual__list", {
   // slide, cube, fade
   effect: "cube",
   loop: true,
@@ -42,11 +44,11 @@ const swiper = new Swiper(".visual__list", {
   pagination: {
     el: ".visual__list .pagination",
     type: "bullets",
+    clickable: true,
   },
 
-  navigation: {
-    nextEl: ".news-banner .btn--next",
-    prevEl: ".news-banner .btn--prev",
+  cubeEffect: {
+    shadow: false,
   },
 });
 
@@ -55,17 +57,17 @@ const swiper2 = new Swiper(".news-banner", {
   loop: true,
   spaceBetween: 50,
 
-  pagination: {
-    el: ".visual__list .pagination",
-    type: "bullets",
-  },
-
   navigation: {
     nextEl: ".news-banner .btn--next",
     prevEl: ".news-banner .btn--prev",
   },
 });
 
-btnTop.addEventListener("click", function (e) {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+// visual__txt 움직이기
+gsap.from(".visual__txt .char", {
+  y: 100,
+  opacity: 0,
+  duration: 1,
+  ease: "power4",
+  stagger: 0.02,
 });

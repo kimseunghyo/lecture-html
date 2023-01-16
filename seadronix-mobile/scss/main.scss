@@ -11,75 +11,9 @@ strong {
 }
 
 h2 {
-  //font-size: $h2;
   font-size: clamp(35px, 8vw, 45px);
   line-height: 1.25;
   margin-bottom: 20px;
-}
-
-.visual__list {
-  width: 100%;
-  height: 100vh;
-
-  li {
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background-position: 50%;
-
-    &.visual01 {
-      background-image: url("../images/main/visual01.jpg");
-    }
-
-    &.visual02 {
-      background-image: url("../images/main/visual02.jpg");
-    }
-
-    &.visual03 {
-      background-image: url("../images/main/visual03.jpg");
-    }
-  }
-
-  .pagination {
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 3;
-
-    .swiper-pagination-bullet {
-      opacity: 1;
-      width: 12px;
-      height: 12px;
-      background-color: #fff;
-      &-active {
-        background-color: $blue;
-      }
-    }
-  }
-}
-
-.visual__txt {
-  position: absolute;
-  color: #fff;
-  bottom: 50px;
-  left: 20px;
-  //font-size: 20px;
-  font-size: clamp(16px, 5vw, 18px);
-
-  h3 {
-    //font-size: 64px;
-    font-size: clamp(40px, 8vw, 50px);
-    font-weight: 900;
-    margin-bottom: 30px;
-    text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.25);
-  }
-
-  p {
-    margin-bottom: 20px;
-    padding-right: 20px;
-  }
 }
 
 .section {
@@ -91,13 +25,84 @@ h2 {
   }
 }
 
-.about .about__txt p {
-  font-size: clamp(16px, 5vw, 18px);
-  margin-bottom: 30px;
+.main {
+  overflow: hidden;
+
+  .visual__list {
+    width: 100%;
+    height: 100vh;
+
+    li {
+      height: 100vh;
+      width: 100%;
+      background-size: cover;
+      background-position: 50%;
+
+      &.visual01 {
+        background-image: url("../images/main/visual01.jpg");
+      }
+
+      &.visual02 {
+        background-image: url("../images/main/visual02.jpg");
+      }
+
+      &.visual03 {
+        background-image: url("../images/main/visual03.jpg");
+      }
+    }
+
+    .pagination {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 3;
+
+      .swiper-pagination-bullet {
+        opacity: 1;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        &-active {
+          background-color: $blue;
+        }
+      }
+    }
+  }
+
+  .visual__txt {
+    position: absolute;
+    color: #fff;
+    bottom: 100px;
+    left: 20px;
+    font-size: clamp(16px, 5vw, 18px);
+    word-break: keep-all; //글자 단위의 줄바꿈을 하지 않는다.
+
+    h3 {
+      font-size: clamp(40px, 8vw, 50px);
+      font-weight: 900;
+      margin-bottom: 30px;
+      text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.25);
+    }
+
+    br {
+      display: none;
+    }
+
+    .word {
+      overflow: hidden;
+    }
+
+    .char {
+      //opacity: 0;
+      //transform: translateX(50px);
+    }
+  }
 }
 
 .btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: clamp(14px, 5vw, 16px);
@@ -143,8 +148,17 @@ h2 {
       width: 100%;
     }
   }
-}
 
+  &__txt {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: clamp(16px, 5vw, 18px);
+      margin-bottom: 30px;
+    }
+  }
+}
 .products {
   background-color: $gray;
 
@@ -242,7 +256,6 @@ h2 {
   }
 
   h2 {
-    //font-size: 28px;
     font-size: clamp(25px, 6vw, 35px);
     margin-bottom: 40px;
     color: #fff;
@@ -439,7 +452,6 @@ h2 {
 
   &__txt {
     h3 {
-      //font-size: 24px;
       font-size: clamp(18px, 5vw, 20px);
       font-weight: 700;
       margin: 20px 0;
