@@ -1,0 +1,20 @@
+.sub-header {
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: red;
+  background-size: cover;
+
+  .sub-title {
+    font-size: 64px;
+    font-weight: 700;
+    width: 1200px;
+    margin-bottom: 50px;
+    color: #fff;
+  }
+}
+
+#vision {
+  background-image: url("../images/sub/company-bg_re.jpg");
+}
