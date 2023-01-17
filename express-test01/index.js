@@ -9,7 +9,7 @@ app.get("/", function (req, res) {
 
 app.get("/login", function (req, res) {
   // res.send(' <form method="get" action="/loginOK">)
-  res.sendFile(path.join(__dirname, "login.html"));
+  res.sendFile(path.join(__dirname, "html/login.html"));
 });
 
 app.get("/loginOK", function (req, res) {
