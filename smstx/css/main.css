@@ -1,5 +1,11 @@
 .main-visual {
   overflow: hidden;
+  height: 50px;
+}
+.main-visual ul {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
 }
 .main-visual ul li {
   height: 100vh;
@@ -21,7 +27,7 @@
   height: 100vh;
 }
 .main-visual--visual01 {
-  background-image: url("../images/main/img_visual01.png");
+  background-image: url("../images/main/img_visual01.jpg");
 }
 .main-visual--visual02 {
   background-image: url("../images/main/img_visual02.jpg");
@@ -51,7 +57,7 @@
 .main-visual__txt:before {
   display: block;
   content: "";
-  background-color: rgb(255, 25, 25);
+  background-color: rgb(236, 27, 27);
   width: 53px;
   height: 4px;
   position: absolute;
@@ -65,39 +71,351 @@
   bottom: 30px;
   justify-content: center;
 }
+.main-visual .pagination-box {
+  width: auto;
+  display: flex;
+  align-items: center;
+}
 .main-visual .pagination .swiper-pagination-bullet {
   opacity: 1;
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  transition: all 0.25s ease;
 }
 .main-visual .pagination .swiper-pagination-bullet-active {
-  background-color: rgb(255, 25, 25);
+  background-color: #fff;
+  width: 60px;
 }
-.main-visual button {
-  position: absolute;
+.main-visual .pagination .btn {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #fff;
+  border-radius: 100px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.main-visual .pagination .btn.off:before {
+  display: inline-block;
+  content: "\e037";
+  margin-left: 0;
+  font-family: "Material Icons";
+}
+.main-visual .pagination .btn:before {
+  display: inline-block;
+  content: "\e034";
+  margin-left: 0;
+  font-family: "Material Icons";
+  font-family: Material Icons;
+  font-size: 20px;
+  color: #fff;
 }
 
+.section {
+  padding: 100px 0;
+  background-color: #fff;
+}
+.section .title-box h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+.business {
+  margin-top: 100vh;
+}
 .business .title-box {
   text-align: center;
   margin-top: 80px;
-}
-.business .title-box h3 {
-  font-weight: 700;
   position: relative;
-  padding: 20px 0;
 }
-.business .title-box h3:after {
+.business .title-box:after {
   display: block;
   content: "";
-  background-color: rgb(255, 25, 25);
-  width: 53px;
+  background-color: rgb(236, 27, 27);
+  width: 50px;
   height: 4px;
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 50%;
+}
+.business .title-box h2 {
+  font-weight: 700;
+  padding: 20px 0;
 }
 .business .title-box p {
   padding: 20px 0;
+}
+.business-list {
+  display: flex;
+  margin-top: 60px;
+  overflow: hidden;
+}
+.business-list li {
+  position: relative;
+  width: 20%;
+  text-align: center;
+  background-image: url("../images/main/img_business.png");
+}
+.business-list li:nth-child(1) {
+  background-position: 0px 0;
+}
+.business-list li:nth-child(2) {
+  background-position: -240px 0;
+}
+.business-list li:nth-child(3) {
+  background-position: -480px 0;
+}
+.business-list li:nth-child(4) {
+  background-position: -720px 0;
+}
+.business-list li:nth-child(5) {
+  background-position: -960px 0;
+}
+.business-list li a {
+  height: 420px;
+  display: block;
+  z-index: 3;
+  position: relative;
+}
+.business-list li h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  padding-top: 100px;
+  position: relative;
+  z-index: 2;
+}
+.business-list li:after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 153, 58);
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+.business-list li:before {
+  content: "";
+  display: block;
+  background-image: url("../images/main/bg_common.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  left: 50%;
+  top: 200px;
+  transform: translate(-50%);
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+.business-list li:nth-child(1):before {
+  width: 123px;
+  height: 112px;
+  background-position: -168px 0px;
+}
+.business-list li:nth-child(2):before {
+  width: 123px;
+  height: 112px;
+  background-position: -301px 0px;
+}
+.business-list li:nth-child(3):before {
+  width: 130px;
+  height: 106px;
+  background-position: 0px -122px;
+}
+.business-list li:nth-child(4):before {
+  width: 130px;
+  height: 111px;
+  background-position: -140px -122px;
+}
+.business-list li:nth-child(5):before {
+  width: 103px;
+  height: 103px;
+  background-position: -280px -122px;
+}
+.business-list li:hover:after {
+  opacity: 1;
+}
+.business-list li:hover:before {
+  opacity: 1;
+}
+
+.board {
+  background-color: #585555;
+  position: relative;
+}
+.board .container {
+  display: flex;
+}
+.board .container .board-item {
+  width: 50%;
+  position: relative;
+  color: #fff;
+}
+.board .container .board-item h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+.board .container .board-item ul li {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.board .container .board-item ul li a {
+  display: block;
+  padding-right: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  font-size: 17px;
+}
+.board .container .board-item ul li a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 1px;
+  height: 20px;
+}
+.board .container .board-item ul li a:after {
+  display: inline-block;
+  content: "\e5c8";
+  margin-left: 10px;
+  font-family: "Material Icons";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.board .container .board-item:nth-child(1) {
+  padding-right: 100px;
+}
+.board .container .board-item:nth-child(2) {
+  padding-left: 100px;
+}
+.board:before {
+  content: "";
+  display: block;
+  background-color: rgb(236, 27, 27);
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.util {
+  background-color: #f0f0f0;
+}
+.util .container {
+  display: flex;
+  position: relative;
+}
+.util .container:before {
+  content: "";
+  background-color: #f0f0f0;
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  position: absolute;
+}
+.util .container .util-item {
+  background-color: #fff;
+  width: 50%;
+  padding: 50px;
+  background-repeat: no-repeat;
+  background-position: right 50px top 50%;
+}
+.util .container .util-item h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.util .container .util-item p {
+  font-size: 17px;
+}
+.util .container .util-item:nth-child(1) {
+  background-image: url("../images/main/bg_faq.png");
+}
+.util .container .util-item:nth-child(2) {
+  background-image: url("../images/main/bg_custom.png");
+}
+
+.about .container {
+  background-repeat: no-repeat;
+  background-image: url("../images/main/img_about.png");
+  background-position: right 0 top 50%;
+  height: 370px;
+}
+.about .title-box h2:after {
+  display: block;
+  content: "";
+  background-color: rgb(236, 27, 27);
+  width: 40px;
+  height: 4px;
+  position: absolute;
+  margin: 60px 0;
+}
+.about .title-box p {
+  margin: 45px 0 0 100px;
+}
+.about .title-box p strong {
+  font-weight: 700;
+  font-size: 20px;
+}
+.about-list {
+  display: flex;
+  justify-content: center;
+  gap: 0 150px;
+  margin-top: 100px;
+}
+.about-list li a {
+  display: block;
+  width: 120px;
+  padding-top: 150px;
+  background-repeat: no-repeat;
+  background-image: url("../images/main/bg_icon.png");
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+.about-list li:nth-child(1) a {
+  background-position: 0px 0;
+}
+.about-list li:nth-child(2) a {
+  background-position: -110px 0;
+}
+.about-list li:nth-child(3) {
+  background-position: -200px 0;
+}
+
+.footer {
+  padding: 80px 0;
+  background-color: #535151;
+}
+.footer .container {
+  display: flex;
+  gap: 0 100px;
+}
+.footer .container p {
+  color: rgb(199, 198, 198);
+  font-size: 14px;
 }

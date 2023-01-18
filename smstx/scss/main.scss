@@ -3,8 +3,13 @@
 
 .main-visual {
   overflow: hidden;
+  height: 50px;
 
   ul {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+
     li {
       height: 100vh;
       background-size: cover;
@@ -28,16 +33,10 @@
     height: 100vh;
   }
 
-  &--visual01 {
-    background-image: url("../images/main/img_visual01.png");
-  }
-
-  &--visual02 {
-    background-image: url("../images/main/img_visual02.jpg");
-  }
-
-  &--visual03 {
-    background-image: url("../images/main/img_visual03.jpg");
+  @for $i from 1 through 3 {
+    &--visual0#{$i} {
+      background-image: url("../images/main/img_visual0#{$i}.jpg");
+    }
   }
 
   &__txt {
@@ -81,47 +80,392 @@
     bottom: 30px;
     justify-content: center;
 
+    &-box {
+      width: auto;
+      display: flex;
+      align-items: center;
+    }
+
     .swiper-pagination-bullet {
       opacity: 1;
-      width: 12px;
-      height: 12px;
-      background-color: #fff;
+      width: 30px;
+      height: 30px;
+      background: none;
+      border: 3px solid #fff;
+      border-radius: 100px;
+      transition: all 0.25s ease;
+
       &-active {
-        background-color: $red;
+        background-color: #fff;
+        width: 60px;
+      }
+    }
+
+    .btn {
+      width: 30px;
+      height: 30px;
+      border: 3px solid #fff;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &.off:before {
+        @include icon("\e037", 0);
+      }
+
+      &:before {
+        @include icon("\e034", 0);
+        font-family: Material Icons;
+        font-size: 20px;
+        color: #fff;
       }
     }
   }
+}
 
-  button {
-    position: absolute;
-    display: flex;
+.section {
+  padding: 100px 0;
+  background-color: #fff;
+
+  .title-box {
+    h2 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
   }
 }
 
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
 .business {
+  margin-top: 100vh;
+
   .title-box {
     text-align: center;
     margin-top: 80px;
+    position: relative;
 
-    h3 {
+    &:after {
+      display: block;
+      content: "";
+      background-color: $red;
+      width: 50px;
+      height: 4px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+
+    h2 {
       font-weight: 700;
-      position: relative;
       padding: 20px 0;
-
-      &:after {
-        display: block;
-        content: "";
-        background-color: $red;
-        width: 53px;
-        height: 4px;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-      }
     }
 
     p {
       padding: 20px 0;
+    }
+  }
+
+  &-list {
+    display: flex;
+    margin-top: 60px;
+    overflow: hidden;
+
+    li {
+      position: relative;
+      width: 20%;
+      text-align: center;
+      background-image: url("../images/main/img_business.png");
+
+      // 보간 interpolation 문자열일때 #{$i}
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          background-position: (-240px * ($i - 1)) 0;
+        }
+      }
+
+      a {
+        height: 420px;
+        display: block;
+        z-index: 3;
+        position: relative;
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        padding-top: 100px;
+        position: relative;
+        z-index: 2;
+      }
+
+      &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(255, 153, 58);
+        opacity: 0;
+        transition: all 0.25s ease;
+      }
+
+      &:before {
+        content: "";
+        display: block;
+        background-image: url("../images/main/bg_common.png");
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 1;
+        width: 200px;
+        height: 200px;
+        left: 50%;
+        top: 200px;
+        transform: translate(-50%);
+        opacity: 0;
+        transition: all 0.25s ease;
+      }
+
+      &:nth-child(1):before {
+        width: 123px;
+        height: 112px;
+        background-position: -168px 0px;
+      }
+      &:nth-child(2):before {
+        width: 123px;
+        height: 112px;
+        background-position: -301px 0px;
+      }
+      &:nth-child(3):before {
+        width: 130px;
+        height: 106px;
+        background-position: 0px -122px;
+      }
+      &:nth-child(4):before {
+        width: 130px;
+        height: 111px;
+        background-position: -140px -122px;
+      }
+      &:nth-child(5):before {
+        width: 103px;
+        height: 103px;
+        background-position: -280px -122px;
+      }
+
+      &:hover:after {
+        opacity: 1;
+      }
+
+      &:hover:before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.board {
+  background-color: #585555;
+  position: relative;
+
+  .container {
+    display: flex;
+
+    .board-item {
+      width: 50%;
+      position: relative;
+      color: #fff;
+
+      h2 {
+        font-size: 36px;
+        margin-bottom: 50px;
+      }
+
+      ul {
+        li {
+          padding: 20px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+          a {
+            display: block;
+            //padding-right: 50px;
+            padding-right: 80px;
+            @include ellipsis();
+            position: relative;
+            font-size: 17px;
+
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              right: 10%;
+              top: 50%;
+              transform: translateY(-50%);
+              background-color: rgba(255, 255, 255, 0.5);
+              width: 1px;
+              height: 20px;
+            }
+
+            &:after {
+              @include icon("\e5c8");
+              display: block;
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+
+      &:nth-child(1) {
+        padding-right: 100px;
+      }
+
+      &:nth-child(2) {
+        padding-left: 100px;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    background-color: $red;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.util {
+  background-color: #f0f0f0;
+
+  .container {
+    display: flex;
+    position: relative;
+
+    &:before {
+      content: "";
+      background-color: #f0f0f0;
+      width: 2px;
+      height: 100%;
+      left: 50%;
+      position: absolute;
+    }
+
+    .util-item {
+      background-color: #fff;
+      width: 50%;
+      padding: 50px;
+
+      h2 {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 17px;
+      }
+
+      background-repeat: no-repeat;
+      background-position: right 50px top 50%;
+
+      &:nth-child(1) {
+        background-image: url("../images/main/bg_faq.png");
+      }
+
+      &:nth-child(2) {
+        background-image: url("../images/main/bg_custom.png");
+      }
+    }
+  }
+}
+
+.about {
+  .container {
+    background-repeat: no-repeat;
+    background-image: url("../images/main/img_about.png");
+    background-position: right 0 top 50%;
+    height: 370px;
+  }
+
+  .title-box {
+    h2 {
+      &:after {
+        display: block;
+        content: "";
+        background-color: $red;
+        width: 40px;
+        height: 4px;
+        position: absolute;
+        margin: 60px 0;
+      }
+    }
+
+    p {
+      margin: 45px 0 0 100px;
+
+      strong {
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    justify-content: center;
+    gap: 0 150px;
+    margin-top: 100px;
+
+    li {
+      a {
+        display: block;
+        width: 120px;
+        padding-top: 150px;
+        background-repeat: no-repeat;
+        background-image: url("../images/main/bg_icon.png");
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      @for $i from 1 through 2 {
+        &:nth-child(#{$i}) a {
+          background-position: -110px * ($i - 1) 0;
+        }
+      }
+
+      &:nth-child(3) {
+        background-position: -200px 0;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 80px 0;
+  background-color: #535151;
+
+  .container {
+    display: flex;
+    gap: 0 100px;
+
+    p {
+      color: rgb(199, 198, 198);
+      font-size: 14px;
     }
   }
 }

@@ -2,6 +2,7 @@ Splitting();
 
 const header = document.querySelector(".header");
 const gnb = document.querySelector(".gnb__list");
+const btnAuto = document.querySelector(".btn--auto");
 
 gnb.addEventListener("mouseenter", function (e) {
   header.classList.add("on");
@@ -13,9 +14,15 @@ gnb.addEventListener("mouseleave", function (e) {
 
 const swiper = new Swiper(".main-visual__list", {
   loop: true,
+  speed: 1000,
+
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
 
   pagination: {
-    el: ".main-visual__list .pagination",
+    el: ".main-visual__list .pagination-box",
     type: "bullets",
     clickable: true,
   },
@@ -23,6 +30,16 @@ const swiper = new Swiper(".main-visual__list", {
   cubeEffect: {
     shadow: false,
   },
+});
+
+btnAuto.addEventListener("click", function () {
+  if (swiper.autoplay.paused) {
+    swiper.autoplay.run();
+    btnAuto.classList.remove("off");
+  } else {
+    swiper.autoplay.pause();
+    btnAuto.classList.add("off");
+  }
 });
 
 gsap.from(".main-visual__txt .char", {
