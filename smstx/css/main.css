@@ -352,6 +352,12 @@
 .util .container .util-item p {
   font-size: 17px;
 }
+.util .container .util-item__faq {
+  display: inline-block;
+}
+.util .container .util-item__customer {
+  display: inline-block;
+}
 .util .container .util-item:nth-child(1) {
   background-image: url("../images/main/bg_faq.png");
 }
